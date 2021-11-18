@@ -5,7 +5,6 @@ class User(models.Model):
     name = models.CharField(max_length=32)
     password = models.CharField(max_length=128)
     online = models.BooleanField()
-    collection = models.ManyToManyField('Guide')
 
 class Guide(models.Model):
     name = models.CharField(max_length=32)
