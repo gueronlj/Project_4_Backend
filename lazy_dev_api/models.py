@@ -1,13 +1,11 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-# Create your models here.
-
 class User(models.Model):
     name = models.CharField(max_length=32)
     password = models.CharField(max_length=128)
     online = models.BooleanField()
-    collection = ArrayField(models.IntegerField(), null=True, blank=True)
+    collection = models.ManyToManyField('Guide')
 
 class Guide(models.Model):
     name = models.CharField(max_length=32)
